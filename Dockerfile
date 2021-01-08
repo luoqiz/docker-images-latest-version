@@ -9,7 +9,7 @@ LABEL \
   org.opencontainers.image.vendor="https://luoqiz.top" \
   org.opencontainers.image.licenses="MIT"
 
-RUN apk --no-cache add curl jq
+RUN apk --no-cache add bash curl jq openssl coreutils
 
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
