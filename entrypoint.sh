@@ -2,7 +2,12 @@
 
 export GITHUB="true"
 
-image_name=($INPUT_image)
+if [ -z "$INPUT_IMAGE" ]; then
+  echo '::error::Required Args parameter'
+  exit 1
+fi
+
+image_name=($INPUT_IMAGE)
 
 
 url="https://hub.docker.com/v2/repositories/${image_name}/tags/?page_size=25&page=1&ordering=last_updated"
