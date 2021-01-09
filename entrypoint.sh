@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eu
-
 
 url="https://hub.docker.com/v2/repositories/spikhalskiy/zerotier/tags/?page_size=25&page=1&ordering=last_updated"
 key=".results"
@@ -27,7 +25,7 @@ function get_json_value()
     fi
     res=$(_jq '.name')
     break;
-	done
+  done
   echo ${res}
   return 200
 }
@@ -35,7 +33,7 @@ function get_json_value()
 
 COUNT=0
 while (($COUNT < 5)); do
-		RESP=$(curl -s ${url} )
+    RESP=$(curl -s ${url} )
     version=$(get_json_value  $RESP $key)
     if [[  -n "$version" ]]; then
         echo $version
