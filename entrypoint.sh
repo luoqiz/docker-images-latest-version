@@ -2,7 +2,9 @@
 
 export GITHUB="true"
 
-url="https://hub.docker.com/v2/repositories/spikhalskiy/zerotier/tags/?page_size=25&page=1&ordering=last_updated"
+image_name=($INPUT_image)
+
+url="https://hub.docker.com/v2/repositories/${image_name}/tags/?page_size=25&page=1&ordering=last_updated"
 key=".results"
 
 function get_json_value()
