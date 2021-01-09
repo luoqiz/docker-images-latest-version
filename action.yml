@@ -1,0 +1,20 @@
+name: 'Get docker image latest version'
+description: 'Get docker image latest version'
+author: 'luoqiz'
+
+branding:
+  icon: 'cloud'
+  color: 'blue'
+  
+inputs:
+  image:
+    description: 'docker image name'
+    required: true
+    
+outputs:
+  version:
+    description: 'docker image latest version'
+  
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
