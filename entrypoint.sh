@@ -3,6 +3,7 @@
 export GITHUB="true"
 
 image_name=($INPUT_image)
+$(echo ${image_name})
 
 url="https://hub.docker.com/v2/repositories/${image_name}/tags/?page_size=25&page=1&ordering=last_updated"
 key=".results"
