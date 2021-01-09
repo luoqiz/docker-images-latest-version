@@ -2,6 +2,7 @@
 
 set -eu
 
+
 url="https://hub.docker.com/v2/repositories/spikhalskiy/zerotier/tags/?page_size=25&page=1&ordering=last_updated"
 key=".results"
 
@@ -38,6 +39,7 @@ while (($COUNT < 5)); do
     version=$(get_json_value  $RESP $key)
     if [[  -n "$version" ]]; then
         echo $version
+	echo "::set-output name=version::${version}"
         break
     else
         COUNT=$(( ${COUNT} + 1 ))
