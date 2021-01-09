@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 url="https://hub.docker.com/v2/repositories/spikhalskiy/zerotier/tags/?page_size=25&page=1&ordering=last_updated"
 key=".results"
 
